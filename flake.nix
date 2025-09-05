@@ -38,11 +38,5 @@
         inherit pkgs caelestia-shell;
       };
     };
-    nixosConfigurations.caelestia-nixos-vm = nixpkgs.lib.nixosSystem {
-      modules = [./configuration.nix home-manager.nixosModules.home-manager ./vm.nix];
-      specialArgs = {
-        inherit pkgs caelestia-shell;
-      };
-    };
   };
 }
