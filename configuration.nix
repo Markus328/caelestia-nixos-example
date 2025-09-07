@@ -30,7 +30,7 @@
   networking.networkmanager.enable = true;
 
   users.users = {
-    root.initialPassword = "root"; # you must change the root password with `passwd`
+    root.initialPassword = "notsegsy"; # you must change the root password with `passwd`
     caelestia = {
       isNormalUser = true;
       extraGroups = ["wheel"];

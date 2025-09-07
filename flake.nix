@@ -30,7 +30,7 @@
       modules = [./configuration.nix];
       inherit system;
       specialArgs = {
-        inherit hyprland inputs;
+        inherit inputs;
       };
     };
   };
