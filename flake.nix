@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
@@ -25,17 +25,12 @@
     ...
   }: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [
-        hyprland.overlays.default
-      ];
-    };
   in {
     nixosConfigurations.caelestia-nixos = nixpkgs.lib.nixosSystem {
-      modules = [./configuration.nix home-manager.nixosModules.home-manager];
+      modules = [./configuration.nix];
+      inherit system;
       specialArgs = {
-        inherit pkgs caelestia-shell;
+        inherit hyprland inputs;
       };
     };
   };
