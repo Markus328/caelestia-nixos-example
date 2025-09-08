@@ -52,15 +52,15 @@
 
   # if not willing to test in a VM, you can safely delete this configs below
   virtualisation.vmVariant = {
-    nixpkgs.hostPlatform = pkgs.system;
-
     virtualisation = {
-      memorySize = 2048;
-      cores = 2;
+      memorySize = 4096;
+      cores = 4;
 
       qemu.options = [
         "-device virtio-vga-gl"
-        "-display sdl,gl=on,show-cursor=off"
+        "-display gtk,gl=on,show-cursor=off,grab-on-hover=on"
+        "-cpu host"
+        "-usb -device usb-tablet"
       ];
     };
   };

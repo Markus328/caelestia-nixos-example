@@ -22,6 +22,8 @@
       settings = {
         # configure your hyprland here
         # see https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager/
+
+        bind = ["SUPER, Q, exec, foot" "SUPER, M, exit"];
       };
       # extraConfig = ./hyprland.conf
     };
@@ -49,7 +51,7 @@
 
     # your home.packages, you don't need to specify caelestia here
     home.packages = with pkgs; [
-      kitty
+      foot
       # firefox
     ];
 
