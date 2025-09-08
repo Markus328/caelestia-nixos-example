@@ -7,15 +7,12 @@
 }: {
   imports = [
     # ./hardware-configuration.nix
-    inputs.hyprland.nixosModules.default
     inputs.home-manager.nixosModules.default
     ./home.nix
   ];
 
   nixpkgs = {
-    overlays = [
-      inputs.hyprland.overlays.default
-    ];
+    overlays = [];
   };
 
   boot.loader.grub.enable = true;
