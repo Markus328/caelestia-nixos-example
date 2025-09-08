@@ -25,7 +25,8 @@
     ...
   }: let
     system = "x86_64-linux";
-  in {
+  in rec {
+    packages.${system}.default = nixosConfigurations.caelestia-nixos.config.system.build.vm;
     nixosConfigurations.caelestia-nixos = nixpkgs.lib.nixosSystem {
       modules = [./configuration.nix];
       inherit system;
