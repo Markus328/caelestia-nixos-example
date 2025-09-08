@@ -55,7 +55,7 @@ You have now successfully installed the Caelestia NixOS configuration!
 If you do not have a NixOS installation yet, follow the [NixOS Installation Guide](https://nixos.wiki/wiki/NixOS_Installation_Guide) until you reach the "Create NixOS config" step. Before running `sudo nixos-install`, run:
 
 ```bash
-   git clone https://github.com/Markus328/caelestia-nixos-example.git /mnt/etc/nixos
+git clone https://github.com/Markus328/caelestia-nixos-example.git /mnt/etc/nixos
 ```
 
 Reboot the system, now follow the step 3 from previous section.
