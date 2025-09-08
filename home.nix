@@ -8,12 +8,18 @@
   home-manager.users.caelestia = {
     imports = [inputs.caelestia-shell.homeManagerModules.default];
 
-    programs.bash.enable = true;
+    programs.bash = {
+      enable = true;
+      profileExtra = ''
+        if [ "$(tty)" == "/dev/tty1" ]; then
+          exec Hyprland
+        fi
+      '';
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
-        bind = ["SUPER, Q, exit"];
         # configure your hyprland here
         # see https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager/
       };
