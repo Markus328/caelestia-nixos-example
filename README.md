@@ -24,31 +24,7 @@ result/bin/run-caelestia-nixos-vm
 
 # Installation
 
-To install this configuration, you need to copy the files from this repository to a fresh NixOS installation. Follow these steps as the root user:
-
-1. Clone the repository into the `/etc/nixos` directory:
-
-   ```bash
-   git clone https://github.com/Markus328/caelestia-nixos-example.git /etc/nixos
-   ```
-
-2. Build and switch to the new configuration:
-
-   ```bash
-   nixos-rebuild switch --flake
-   ```
-
-3. Log in as root using the default password "notsegsy" and set up new passwords:
-
-   ```bash
-   su root
-   passwd # choose a new password for root
-   passwd caelestia # choose a new password for the caelestia user
-   ```
-
-You have now successfully installed the Caelestia NixOS configuration!
-
----
+To install this configuration, you don't really need to install it. Just enable hyprland in your NixOS config and use the home-manager module of Caelestia. In the case you don't want to use home-manager, you can just add to your environment packages.
 
 # Installation from Scratch
 
