@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
     ./home.nix
   ];
@@ -15,7 +15,7 @@
     overlays = [];
   };
 
-  boot.loader.grub.enable = true;
+  boot.loader.systemd-boot.enable = true;
 
   nix = {
     settings = {
