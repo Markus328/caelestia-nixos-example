@@ -52,13 +52,18 @@ You have now successfully installed the Caelestia NixOS configuration!
 
 # Installation from Scratch
 
-If you do not have a NixOS installation yet, follow the [NixOS Installation Guide](https://nixos.wiki/wiki/NixOS_Installation_Guide) until you reach the "Create NixOS config" step. Before running `sudo nixos-install`, run:
+If you do not have a NixOS installation yet, follow the [NixOS Installation Guide](https://nixos.wiki/wiki/NixOS_Installation_Guide) until right before the "Create NixOS Config". Now, run:
 
 ```bash
-git clone https://github.com/Markus328/caelestia-nixos-example.git /mnt/etc/nixos
+sudo git clone https://github.com/Markus328/caelestia-nixos-example.git /mnt/etc/nixos
+sudo nixos-generate-config --root /mnt # This should create a hardware-configuration.nix
+
+cd /mnt/etc/nixos
+sudo git add .
+sudo nixos-install --flake .#caelestia-nixos
 ```
 
-Reboot the system, now follow the step 3 from previous section.
+Set the root password and reboot the system.
 
 ---
 
